@@ -1,14 +1,19 @@
 uuid = "bbaa987c-8ebf-412f-af6f-70c79e63bb51"
 name = "Submit ISRC"
 authors = ["Bob Swift"]
+maintainers = ["karpuzikov"]
 description = "Adds a right-click action to submit ISRCs from one or multiple selected Picard releases to MusicBrainz."
-api = ['3.0']
+api = ["3.0"]
 license = "GPL-2.0"
 license_url = "https://www.gnu.org/licenses/gpl-2.0.txt"
+source_locale = "en"
 long_description = """
 Adds a right-click action to submit ISRCs from one or multiple selected Picard releases to MusicBrainz.
 
 Select any number of releases in Picard, including Select All, then choose "Submit ISRCs" from the Plugins section. The plugin scans every selected release, collects missing ISRCs, deduplicates repeated recordings across releases, and submits the missing ISRCs in one operation.
+
+Install directly in Picard 3 from Options > Plugins > Install using this custom URL:
+https://github.com/karpuzikov/picard-plugin-submit-isrc
 
 If the same ISRC appears on multiple selected releases for the same MusicBrainz recording, it is submitted only once. If the same ISRC would be assigned to different recordings, submission is aborted.
 
