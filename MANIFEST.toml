@@ -1,24 +1,22 @@
 uuid = "bbaa987c-8ebf-412f-af6f-70c79e63bb51"
 name = "Submit ISRC"
 authors = ["Bob Swift"]
-description = "Adds a right click option on an album to submit the ISRCs to the MusicBrainz server specified in the Options."
+description = "Adds a right-click action to submit ISRCs from one or multiple selected Picard releases to MusicBrainz."
 api = ['3.0']
 license = "GPL-2.0"
 license_url = "https://www.gnu.org/licenses/gpl-2.0.txt"
 long_description = """
-Adds a right click option on an album to submit the ISRCs to the MusicBrainz server specified in the Options.
+Adds a right-click action to submit ISRCs from one or multiple selected Picard releases to MusicBrainz.
 
-To use this function, you must first match your files to the appropriate tracks for a release. Once this is done, but before you save your files if you have Picard set to overwrite the 'isrc' tag in your files, right-click the release and select "Submit ISRCs" in the "Plugins" section. For each file that has a single valid ISRC in its metadata, the ISRC will be added to the recording on the release if it does not already exist. Once all tracks for the release have been processed, the missing ISRCs will be submitted to MusicBrainz.
+Select any number of releases in Picard, including Select All, then choose "Submit ISRCs" from the Plugins section. The plugin scans every selected release, collects missing ISRCs, deduplicates repeated recordings across releases, and submits the missing ISRCs in one operation.
 
-If a file's metadata contains multiple ISRCs, such as if the file has already been tagged, then no ISRCs will be submitted for that file.
+If the same ISRC appears on multiple selected releases for the same MusicBrainz recording, it is submitted only once. If the same ISRC would be assigned to different recordings, submission is aborted.
 
-If one of the files contains an invalid ISRC, or if the same ISRC appears in the metadata for two or more files, then a notice will be displayed and the submission process will be aborted.
-
-When ISRCs have been submitted, a notice will be displayed showing whether or not the submission was successful.
+Files containing multiple ISRCs and selected releases with no tracks are skipped and reported. Invalid ISRCs abort the submission.
 """
 categories = ["other"]
-homepage = "https://picard-plugins-user-guides.readthedocs.io/en/latest/submit_isrc/user_guide.html"
-report_bugs_to = "https://github.com/rdswift/picard-plugin-submit-isrc/issues"
+homepage = "https://github.com/karpuzikov/picard-plugin-submit-isrc"
+report_bugs_to = "https://github.com/karpuzikov/picard-plugin-submit-isrc/issues"
 
 [name_i18n]
 fr = "Soumettre un code ISRC"
